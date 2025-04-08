@@ -1,0 +1,134 @@
+/* ลงทะเบียนโดยใช้บัตรประชาชน สิทธิประกันสังคม A7  */
+URL = https://localhost/rjh_api/register/register_general
+Method = POST
+Body = {"id":"1540700088752"}
+
+Response มี 10 แบบ
+
+กรณี ส่ง Method != POST
+{
+  "message": "Invalid Method GET",
+  "status": false
+}
+
+กรณี ส่ง id = ""
+{
+  "message": "ID ห้ามเป็นค่าว่าง",
+  "status": false
+}
+
+กรณี ไม่พบข้อมูลใน ssn
+{
+  "message": "ไม่พบสิทธิในฐานข้อมูล",
+  "status": false
+}
+
+กรณี พบข้อมูลใน ssn แต่หมดอายุ
+{
+  "message": "สิทธิประกันสังคมหมดอายุ",
+  "status": false
+}
+
+กรณีมีการลงทะเบียนของ hn ภายในแล้ว
+{
+  "message": "มีการลงทะเบียนวันนี้แล้ว ไม่สามารถลงทะเบียนได้",
+  "status": false
+}
+
+กรณีพบ hn เป็นผู้ป่วยใน
+{
+  "message": "เป็นผู้ป่วยใน ไม่สามารถลงทะเบียนได้",
+  "status": false
+}
+
+กรณีพบ hn เป็นเสียชีวิตแล้ว
+{
+  "message": "ผู้ป่วยเสียชีวิตแล้ว!",
+  "status": false
+}
+
+กรณีลงทะเบียนสำเร็จ
+{
+  "message": "ลงทะเบียนสำเร็จ",
+  "status": ture
+}
+
+กรณีลงทะเบียนไม่สำเร็จ
+{
+  "message": "ลงทะเบียนไม่สำเร็จ",
+  "status": false
+}
+
+กรณีไม่พบข้อมูล hn 
+{
+  "message": "ไม่พบข้อมูลคนไข้",
+  "status": false
+}
+
+
+/* ลงทะเบียนผู้ป่วยนัดใช้ ser ใน fu สิทธิประกันสังคม A7  */
+URL = https://localhost/rjh_api/register/register_appointment
+Method = POST
+Body = {"ser":2070871}
+
+Response มี 10 แบบ
+
+กรณี ส่ง Method != POST
+{
+  "message": "Invalid Method GET",
+  "status": false
+}
+
+กรณี ส่ง ser = ""
+{
+  "message": "ser ห้ามเป็นค่าว่าง",
+  "status": false
+}
+
+กรณี ไม่พบข้อมูลใน ssn
+{
+  "message": "ไม่พบสิทธิในฐานข้อมูล",
+  "status": false
+}
+
+กรณี พบข้อมูลใน ssn แต่หมดอายุ
+{
+  "message": "สิทธิประกันสังคมหมดอายุ",
+  "status": false
+}
+
+กรณีมีการลงทะเบียนของ hn ภายในแล้ว
+{
+  "message": "มีการลงทะเบียนวันนี้แล้ว ไม่สามารถลงทะเบียนได้",
+  "status": false
+}
+
+กรณีพบ hn เป็นผู้ป่วยใน
+{
+  "message": "เป็นผู้ป่วยใน ไม่สามารถลงทะเบียนได้",
+  "status": false
+}
+
+กรณีพบ hn เป็นเสียชีวิตแล้ว
+{
+  "message": "ผู้ป่วยเสียชีวิตแล้ว!",
+  "status": false
+}
+
+กรณีลงทะเบียนสำเร็จ
+{
+  "message": "ลงทะเบียนสำเร็จ",
+  "status": ture
+}
+
+กรณีลงทะเบียนไม่สำเร็จ
+{
+  "message": "ลงทะเบียนไม่สำเร็จ",
+  "status": false
+}
+
+กรณีไม่พบข้อมูล hn 
+{
+  "message": "ไม่พบข้อมูลคนไข้",
+  "status": false
+}
